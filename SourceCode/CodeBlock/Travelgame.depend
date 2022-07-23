@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1420212242 source:c:\users\13608\desktop\funcodewin10\games\travelgame\sourcecode\icon.rc
+
+1658599565 source:c:\users\13608\desktop\funcodewin10\games\travelgame\sourcecode\src\lessonx.cpp
+	<Stdio.h>
+	"CommonAPI.h"
+	"LessonX.h"
+
+1461256728 c:\users\13608\desktop\funcodewin10\games\travelgame\sourcecode\header\commonapi.h
+	<windows.h>
+
+1433848234 c:\users\13608\desktop\funcodewin10\games\travelgame\sourcecode\header\lessonx.h
+	<Windows.h>
+
+1435203704 source:c:\users\13608\desktop\funcodewin10\games\travelgame\sourcecode\src\main.cpp
+	"CommonAPI.h"
+	"LessonX.h"
+
