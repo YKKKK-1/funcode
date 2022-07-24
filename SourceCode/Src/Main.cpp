@@ -20,7 +20,7 @@ int PASCAL WinMain(HINSTANCE hInstance,
 
 	// To do : 在此使用API更改窗口标题
 	dSetWindowTitle("Lesson");
-    dShowCursor(0);//隐藏鼠标
+//    dShowCursor(0); // 隐藏鼠标
 	// 引擎主循环，处理屏幕图像刷新等工作
 	while( dEngineMainLoop() )
 	{

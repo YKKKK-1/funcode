@@ -12,20 +12,20 @@
 //
 int			g_iGameState		=	0;		// 游戏状态，0 -- 游戏结束等待开始状态；1 -- 按下空格键开始，初始化游戏；2 -- 游戏进行中
 
-int         mapID;                          // 地图ID
-
 char        sPosition[256];
 char        szTimeBuffer[1024];
 long        musicLength;                    // 音乐长度
 long        currentLength;                  // 当前播放长度
-bool        bgMusicState = true;            // 音乐播放状态
-
+bool        bgMusicState = false;            // 音乐播放状态
+float       dSpeedLeft;
+float       dSpeedRight;
 //
 void		GameInit();
 void		GameRun( float fDeltaTime );
 void		GameEnd();
 
 void GameMusicStatus(){     // 暂停/播放音乐
+    bgMusicState = !bgMusicState;
     if (bgMusicState) {
         mciSendString("play music", NULL, NULL, NULL);
     } else {
@@ -51,7 +51,7 @@ void GameMainLoop( float	fDeltaTime )
 	case 1:
 		{
 			GameInit();
-//            g_iGameState = 2;
+            g_iGameState = 2;
 		}
 		break;
 
@@ -84,6 +84,9 @@ void GameMainLoop( float	fDeltaTime )
 // 每局开始前进行初始化，清空上一局相关数据
 void GameInit()
 {
+
+    dSpeedLeft = 0;
+    dSpeedRight = 0;
 //    加载背景音乐
     mciSendString("open game/data/audio/music.wav Alias music",NULL,NULL,NULL);
 //    获取音乐总长度
@@ -91,8 +94,6 @@ void GameInit()
     musicLength = strtol(sPosition, NULL, 10);
 //    开始播放
     GameMusicStatus();
-//    游戏加载进度条 ?
-    dSetSpriteLinearVelocity("banai", 20, 0);
 }
 //==============================================================================
 //
@@ -102,7 +103,7 @@ void GameRun( float fDeltaTime )
 //      背景音乐循环
     mciSendString("status music position", szTimeBuffer, 1024, 0);
     currentLength = strtol(szTimeBuffer, NULL, 10); // 当前播放长度
-    printf("%ld\n", currentLength);
+//    printf("%ld\n", currentLength);
 //      当前音乐播放长度等于总长度时，刷新音乐
     if (currentLength == musicLength){
         mciSendString("close music", 0, 0, 0);
@@ -110,23 +111,24 @@ void GameRun( float fDeltaTime )
         mciSendString("play music", 0, 0, 0);
     }
 
-    switch (mapID) {
-        case 0:
-            dLoadMap("mainMap.t2d");
-            break;
-        case 1:
-            printf("第二地图");
-//            dLoadMap("")
-            break;
-        case 2:
-            printf("第三地图");
-            break;
-        case 3:
-            printf("2");
-            break;
-        default:
-            break;
-    }
+    dSetSpriteLinearVelocity("banai", dSpeedRight - dSpeedLeft, 0);
+
+//    switch (mapID) {
+//        case 0:
+//            dLoadMap("mainMap.t2d");
+//            break;
+//        case 1:
+//            dLoadMap("jcsyl.t2d");
+//            break;
+//        case 2:
+//            printf("第三地图");
+//            break;
+//        case 3:
+//            printf("2");
+//            break;
+//        default:
+//            break;
+//    }
 }
 //==============================================================================
 //
@@ -142,7 +144,7 @@ void GameEnd()
 void OnMouseMove( const float fMouseX, const float fMouseY )
 {
      //鼠标跟随移动
-    dSpriteMoveTo("mouse", fMouseX, fMouseY, 300, 1);
+    dSpriteMoveTo("mouse", fMouseX, fMouseY, 30, 1);
     //鼠标悬浮放大
     if(dIsPointInSprite("startBtn",fMouseX,fMouseY))
     {
@@ -165,13 +167,17 @@ void OnMouseClick( const int iMouseType, const float fMouseX, const float fMouse
 //    点击开始按钮初始化游戏
     if(iMouseType == 0 && dIsPointInSprite("startBtn",fMouseX,fMouseY)){
         g_iGameState = 1;
+        dLoadMap("mainMap.t2d");
     }
 //    点击开关背景音乐
     if(iMouseType == 0 && dIsPointInSprite("musicPower",fMouseX,fMouseY)){
         GameMusicStatus();
-        bgMusicState = !bgMusicState;
     }
 
+    // 基础实验楼
+    if(iMouseType == 0 && dIsPointInSprite("m_btn_jcsyl",fMouseX,fMouseY)){
+        dLoadMap("jcsyl.t2d");
+    }
 }
 //==========================================================================
 //
@@ -189,10 +195,22 @@ void OnMouseUp( const int iMouseType, const float fMouseX, const float fMouseY )
 // 参数 iAltPress, iShiftPress，iCtrlPress：键盘上的功能键Alt，Ctrl，Shift当前是否也处于按下状态(0未按下，1按下)
 void OnKeyDown( const int iKey, const bool bAltPress, const bool bShiftPress, const bool bCtrlPress )
 {
-    if (KEY_M == iKey){
-        GameMusicStatus();
-        bgMusicState = !bgMusicState;
+
+    switch (iKey) {
+        case KEY_A:
+            dSpeedLeft = 10;
+            break;
+        case KEY_D:
+            dSpeedRight = 10;
+            break;
+        case KEY_M:
+            GameMusicStatus();
+            break;
+        default:
+            break;
     }
+
+
 }
 //==========================================================================
 //
@@ -200,7 +218,16 @@ void OnKeyDown( const int iKey, const bool bAltPress, const bool bShiftPress, co
 // 参数 iKey：弹起的键，值见 enum KeyCodes 宏定义
 void OnKeyUp( const int iKey )
 {
-
+    switch (iKey) {
+        case KEY_A:
+            dSpeedLeft = 0;
+            break;
+        case KEY_D:
+            dSpeedRight = 0;
+            break;
+        default:
+            break;
+    }
 }
 //===========================================================================
 //
@@ -218,10 +245,5 @@ void OnSpriteColSprite( const char *szSrcName, const char *szTarName )
 // 参数 iColSide：碰撞到的边界 0 左边，1 右边，2 上边，3 下边
 void OnSpriteColWorldLimit( const char *szName, const int iColSide )
 {
-//    撞到世界边界进入游戏
-    if (strcmp(szName, "banai") == 0 && iColSide == 1){
-        g_iGameState = 2; //将游戏状态设置为进行中
-        mapID = 0;      //进入主地图
-        printf("进入游戏\n");
-    }
+
 }

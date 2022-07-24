@@ -292,4 +292,24 @@ $managedDatablockSet = new SimSet() {
       animationPingPong = "0";
       animationReverse = "0";
    };
+   new t2dImageMapDatablock(jichushiyanlouImageMap) {
+      imageName = "~/data/images/jichushiyanlou.jpg";
+      imageMode = "FULL";
+      frameCount = "-1";
+      filterMode = "SMOOTH";
+      filterPad = "1";
+      preferPerf = "1";
+      cellRowOrder = "1";
+      cellOffsetX = "0";
+      cellOffsetY = "0";
+      cellStrideX = "0";
+      cellStrideY = "0";
+      cellCountX = "-1";
+      cellCountY = "-1";
+      cellWidth = "0";
+      cellHeight = "0";
+      preload = "1";
+      allowUnload = "0";
+      force16Bit = "0";
+   };
 };
