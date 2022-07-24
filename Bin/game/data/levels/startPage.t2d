@@ -43,7 +43,7 @@
       useSourceRect = "0";
       sourceRect = "2.37252e-039 0 2.37252e-039 6.22914e-039";
       canSaveDynamicFields = "1";
-      Position = "0.000 -0.183";
+      Position = "-0.000 -0.183";
       size = "100.000 74.634";
       WorldLimitMin = "-50.000 -37.500";
       WorldLimitMax = "50.000 37.500";
@@ -55,8 +55,8 @@
       useSourceRect = "0";
       sourceRect = "2.37252e-039 0 2.37252e-039 6.22914e-039";
       canSaveDynamicFields = "1";
-      Position = "0.171 18.567";
-      size = "20.342 20.342";
+      Position = "0.893 17.738";
+      size = "21.786 21.459";
       WorldLimitMin = "-50.000 -37.500";
       WorldLimitMax = "50.000 37.500";
          mountID = "3";
@@ -64,10 +64,35 @@
    new t2dAnimatedSprite(mouse) {
       animationName = "spinAnimation";
       canSaveDynamicFields = "1";
-      Position = "1.250 -48.750";
-      size = "7.500 7.500";
+      Position = "-30.255 16.091";
+      size = "7.165 7.817";
       WorldLimitMin = "-50.000 -37.500";
       WorldLimitMax = "50.000 37.500";
          mountID = "4";
+   };
+   new t2dTextObject() {
+      canSaveDynamicFields = "1";
+      Position = "0.017 -12.503";
+      size = "56.625 10.000";
+      WorldLimitMin = "-50.000 -37.500";
+      WorldLimitMax = "50.000 37.500";
+      BlendColor = "0 0 0 1";
+      text = "FunCode-game";
+      font = "@Microsoft YaHei UI";
+      wordWrap = "0";
+      hideOverflow = "1";
+      textAlign = "Left";
+      lineHeight = "10";
+      aspectRatio = "1";
+      lineSpacing = "0";
+      characterSpacing = "0";
+      autoSize = "1";
+      fontSizes = "80";
+      textColor = "0 0 0 1";
+      bilinearFilter = "0";
+      snapToInteger = "0";
+      noUnicode = "0";
+         hideOverlap = "0";
+         mountID = "5";
    };
 };

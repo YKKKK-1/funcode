@@ -18,6 +18,7 @@ long        musicLength;                    // 音乐长度
 long        currentLength;                  // 当前播放长度
 bool        bgMusicState = false;           // 音乐播放状态
 float       dSpeedLeft, dSpeedRight;        // 精灵速度
+float dTime = 0;
 //
 void		GameInit();
 void		GameRun( float fDeltaTime );
@@ -31,7 +32,9 @@ void GameMusicStatus(){     // 暂停/播放音乐
         mciSendString("pause music", 0, 0, 0);
     }
 }
-
+void EasingFunctions(const float t, const float b, const float c, const float d){
+    c * t / 1 + b;
+}
 //==============================================================================
 //
 // 大体的程序流程为：GameMainLoop函数为主循环函数，在引擎每帧刷新屏幕图像之后，都会被调用一次。
@@ -99,6 +102,7 @@ void GameInit()
 // 每局游戏进行中
 void GameRun( float fDeltaTime )
 {
+    printf("%f\n", fDeltaTime);
 //      背景音乐循环
     mciSendString("status music position", szTimeBuffer, 1024, 0);
     currentLength = strtol(szTimeBuffer, NULL, 10); // 当前播放长度
@@ -143,12 +147,18 @@ void GameEnd()
 void OnMouseMove( const float fMouseX, const float fMouseY )
 {
      //鼠标跟随移动
-    dSpriteMoveTo("mouse", fMouseX, fMouseY, 30, 1);
+    dSpriteMoveTo("mouse", fMouseX + 5, fMouseY + 5, 45, 1);
     //鼠标悬浮放大
     if(dIsPointInSprite("startBtn",fMouseX,fMouseY))
     {
-        dSetSpriteWidth("startBtn",30);
-        dSetSpriteHeight("startBtn",30);
+        if(dGetSpriteWidth("startBtn") <= 30){
+            dSetSpriteWidth("startBtn", (30 - 20) * dTime / 1 + 20);
+            dSetSpriteHeight("startBtn", (30 - 20) * dTime / 1 + 20);
+            dTime += 0.01;
+        }
+//        printf();
+//        dSetSpriteWidth("startBtn",30);
+//        dSetSpriteHeight("startBtn",30);
     }
     if(dIsPointInSprite("startBtn",fMouseX,fMouseY)==0)
     {
