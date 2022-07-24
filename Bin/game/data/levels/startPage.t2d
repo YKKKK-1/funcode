@@ -41,7 +41,7 @@
       imageMap = "backgroundImageMap";
       frame = "0";
       useSourceRect = "0";
-      sourceRect = "2.36006e-039 0 2.37252e-039 6.22914e-039";
+      sourceRect = "2.37252e-039 0 2.37252e-039 6.22914e-039";
       canSaveDynamicFields = "1";
       Position = "1.207 0.529";
       size = "102.414 76.058";
@@ -53,7 +53,7 @@
       imageMap = "playImageMap";
       frame = "0";
       useSourceRect = "0";
-      sourceRect = "2.36006e-039 0 2.37252e-039 6.22914e-039";
+      sourceRect = "2.37252e-039 0 2.37252e-039 6.22914e-039";
       canSaveDynamicFields = "1";
       Position = "2.160 -7.084";
       size = "20.342 20.342";
@@ -65,7 +65,7 @@
       imageMap = "musicImageMap";
       frame = "0";
       useSourceRect = "0";
-      sourceRect = "2.36006e-039 0 2.37252e-039 6.22914e-039";
+      sourceRect = "2.37252e-039 0 2.37252e-039 6.22914e-039";
       canSaveDynamicFields = "1";
       Position = "41.514 -30.438";
       size = "9.000 9.125";
@@ -82,5 +82,14 @@
       WorldLimitMin = "-50.000 -37.500";
       WorldLimitMax = "52.516 38.630";
          mountID = "5";
+   };
+   new t2dAnimatedSprite(mouse) {
+      animationName = "spinAnimation";
+      canSaveDynamicFields = "1";
+      Position = "-6.250 -46.250";
+      size = "7.500 7.500";
+      WorldLimitMin = "-50.000 -37.500";
+      WorldLimitMax = "50.000 37.500";
+         mountID = "6";
    };
 };

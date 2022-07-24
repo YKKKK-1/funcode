@@ -141,7 +141,19 @@ void GameEnd()
 // 参数 fMouseX, fMouseY：为鼠标当前坐标
 void OnMouseMove( const float fMouseX, const float fMouseY )
 {
-
+     //鼠标跟随移动
+    dSpriteMoveTo("mouse", fMouseX, fMouseY, 300, 1);
+    //鼠标悬浮放大
+    if(dIsPointInSprite("startBtn",fMouseX,fMouseY))
+    {
+        dSetSpriteWidth("startBtn",30);
+        dSetSpriteHeight("startBtn",30);
+    }
+    if(dIsPointInSprite("startBtn",fMouseX,fMouseY)==0)
+    {
+        dSetSpriteWidth("startBtn",20);
+        dSetSpriteHeight("startBtn",20);
+    }
 }
 //==========================================================================
 //
