@@ -16,9 +16,8 @@ char        sPosition[256];
 char        szTimeBuffer[1024];
 long        musicLength;                    // 音乐长度
 long        currentLength;                  // 当前播放长度
-bool        bgMusicState = false;            // 音乐播放状态
-float       dSpeedLeft;
-float       dSpeedRight;
+bool        bgMusicState = false;           // 音乐播放状态
+float       dSpeedLeft, dSpeedRight;        // 精灵速度
 //
 void		GameInit();
 void		GameRun( float fDeltaTime );
@@ -198,10 +197,12 @@ void OnKeyDown( const int iKey, const bool bAltPress, const bool bShiftPress, co
 
     switch (iKey) {
         case KEY_A:
-            dSpeedLeft = 10;
+            dSpeedLeft = 15;
+            dAnimateSpritePlayAnimation("banai", "leftAnimation", 1);
             break;
         case KEY_D:
-            dSpeedRight = 10;
+            dSpeedRight = 15;
+            dAnimateSpritePlayAnimation("banai", "rightAnimation", 1);
             break;
         case KEY_M:
             GameMusicStatus();
@@ -209,7 +210,6 @@ void OnKeyDown( const int iKey, const bool bAltPress, const bool bShiftPress, co
         default:
             break;
     }
-
 
 }
 //==========================================================================
@@ -221,9 +221,11 @@ void OnKeyUp( const int iKey )
     switch (iKey) {
         case KEY_A:
             dSpeedLeft = 0;
+            dAnimateSpritePlayAnimation("banai", "banaiAnimation", 1);
             break;
         case KEY_D:
             dSpeedRight = 0;
+            dAnimateSpritePlayAnimation("banai", "banaiAnimation", 1);
             break;
         default:
             break;

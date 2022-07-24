@@ -4,7 +4,7 @@
    <Version>v1.7.5</Version>
    <MinVersion>v1.1.4</MinVersion>
    <Creator>Torque Game Builder</Creator>
-   <LastLevel>Bin/game/data/levels/mainMap.t2d</LastLevel>
+   <LastLevel>Bin/game/data/levels/startPage.t2d</LastLevel>
    <ProjectName>Travelgame</ProjectName>
    <ProjectType>C</ProjectType>
    <JavaDevVersion>JCreator</JavaDevVersion>

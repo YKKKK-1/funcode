@@ -37,13 +37,13 @@
       cameraPosition = "0 0";
       cameraSize = "100 75";
 
-   new t2dStaticSprite(banai) {
+   new t2dStaticSprite() {
       imageMap = "jichushiyanlouImageMap";
       frame = "0";
       useSourceRect = "0";
-      sourceRect = "2.37252e-039 0 2.36006e-039 6.22914e-039";
+      sourceRect = "2.36006e-039 0 2.37252e-039 6.22914e-039";
       canSaveDynamicFields = "1";
-      Position = "0.000 0.147";
+      Position = "0.000 -0.147";
       size = "100.000 75.295";
       WorldLimitMin = "-50.000 -37.500";
       WorldLimitMax = "50.000 37.500";
@@ -54,22 +54,21 @@
       imageMap = "kaka2ImageMap1";
       frame = "0";
       useSourceRect = "0";
-      sourceRect = "2.37252e-039 0 2.36006e-039 6.22914e-039";
+      sourceRect = "2.36006e-039 0 2.37252e-039 6.22914e-039";
       canSaveDynamicFields = "1";
       Position = "39.341 28.226";
       size = "15.000 18.549";
       WorldLimitMin = "-50.000 -37.500";
       WorldLimitMax = "50.000 37.500";
-         mountID = "4";
+         mountID = "3";
    };
    new t2dAnimatedSprite(banai) {
       animationName = "banaiAnimation";
       canSaveDynamicFields = "1";
       Position = "-37.500 25.000";
       size = "25.000 25.000";
-      WorldLimitMode = "NULL";
       WorldLimitMin = "-50.000 -37.500";
       WorldLimitMax = "50.000 37.500";
-         mountID = "3";
+         mountID = "4";
    };
 };

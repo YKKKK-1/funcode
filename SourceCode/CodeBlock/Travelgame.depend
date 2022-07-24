@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
 1420212242 source:c:\users\13608\desktop\funcodewin10\games\travelgame\sourcecode\icon.rc
 
-1658659784 source:c:\users\13608\desktop\funcodewin10\games\travelgame\sourcecode\src\lessonx.cpp
+1658661205 source:c:\users\13608\desktop\funcodewin10\games\travelgame\sourcecode\src\lessonx.cpp
 	<Stdio.h>
 	"CommonAPI.h"
 	"LessonX.h"

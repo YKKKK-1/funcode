@@ -43,7 +43,7 @@
       useSourceRect = "0";
       sourceRect = "2.37252e-039 0 2.37252e-039 6.22914e-039";
       canSaveDynamicFields = "1";
-      Position = "-0.000 -0.183";
+      Position = "0.000 -0.183";
       size = "100.000 74.634";
       WorldLimitMin = "-50.000 -37.500";
       WorldLimitMax = "50.000 37.500";

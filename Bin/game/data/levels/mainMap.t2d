@@ -41,7 +41,7 @@
       imageMap = "FinalMapImageMap";
       frame = "0";
       useSourceRect = "0";
-      sourceRect = "2.37252e-039 0 2.37252e-039 6.22914e-039";
+      sourceRect = "2.37252e-039 0 2.36006e-039 6.22914e-039";
       canSaveDynamicFields = "1";
       Position = "0.511 0.298";
       size = "101.023 75.595";
@@ -53,7 +53,7 @@
       imageMap = "musicImageMap";
       frame = "0";
       useSourceRect = "0";
-      sourceRect = "2.37252e-039 0 2.37252e-039 6.22914e-039";
+      sourceRect = "2.37252e-039 0 2.36006e-039 6.22914e-039";
       canSaveDynamicFields = "1";
       Position = "42.909 -32.319";
       size = "9.000 9.125";
@@ -74,7 +74,7 @@
    new t2dAnimatedSprite(mouse) {
       animationName = "spinAnimation";
       canSaveDynamicFields = "1";
-      Position = "-2.607 -49.567";
+      Position = "1.037 -3.097";
       size = "15.214 13.807";
       WorldLimitMin = "-50.000 -37.500";
       WorldLimitMax = "50.000 37.500";

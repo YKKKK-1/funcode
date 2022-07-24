@@ -1,7 +1,7 @@
-//-------------------------- 7/24/2022 -- 18:50:59 -----
+//-------------------------- 7/24/2022 -- 20:26:17 -----
 Processor Init:
    AMD (unknown), ~1.80 Ghz
-     (timed at roughly 1.78 Ghz)
+     (timed at roughly 1.79 Ghz)
    FPU detected
    MMX detected
    SSE detected
@@ -110,7 +110,6 @@ Loading compiled script C:/Users/13608/Desktop/funcodewin10/Games/Travelgame/Bin
 FunCode (v1.7.5) initialized...
 Loading compiled script C:/Users/13608/Desktop/funcodewin10/Games/Travelgame/Bin/game/managed/datablocks.cs.
 Loading compiled script C:/Users/13608/Desktop/funcodewin10/Games/Travelgame/Bin/game/managed/persistent.cs.
-Compiling C:/Users/13608/Desktop/funcodewin10/Games/Travelgame/Bin/game/managed/brushes.cs...
 Loading compiled script C:/Users/13608/Desktop/funcodewin10/Games/Travelgame/Bin/game/managed/brushes.cs.
 Loading compiled script C:/Users/13608/Desktop/funcodewin10/Games/Travelgame/Bin/game/gui/mainScreen.gui.
 Loading compiled script C:/Users/13608/Desktop/funcodewin10/Games/Travelgame/Bin/game/gameScripts/game.cs.
@@ -122,10 +121,7 @@ Compiling C:/Users/13608/Desktop/funcodewin10/Games/Travelgame/Bin/game/data/lev
 Loading compiled script C:/Users/13608/Desktop/funcodewin10/Games/Travelgame/Bin/game/data/levels/mainMap.t2d.
 Compiling C:/Users/13608/Desktop/funcodewin10/Games/Travelgame/Bin/game/data/levels/jcsyl.t2d...
 Loading compiled script C:/Users/13608/Desktop/funcodewin10/Games/Travelgame/Bin/game/data/levels/jcsyl.t2d.
-Namespace::unlinkClass - cannot unlink namespace parent linkage for banai for t2dStaticSprite.
-Error: cannot change namespace parent linkage of banai from t2dStaticSprite to t2dAnimatedSprite.
 DirectInput deactivated.
-Namespace::unlinkClass - cannot unlink namespace parent linkage for banai for t2dStaticSprite.
 Shutting down the OpenGL display device...
 Making the GL rendering context not current...
 Deleting the GL rendering context...
